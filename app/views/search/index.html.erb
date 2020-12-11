@@ -1,0 +1,20 @@
+<h1><%= @homeland %> Members: </h1>
+<% @characters.each do |character| %>
+  <section>
+    <h2>Name: <%= character.name %></h2>
+    <% if character.image != nil %>
+      <%= image_tag character.image %>
+    <% else %>
+      <h2>No Image Available</h2>
+    <% end %>
+    <h2>Allies: </h2>
+    <% character.all_allies.each do |allies| %>
+      <h3><%= allies %></h3>
+    <% end %>
+    <h2>Enemies: </h2>
+    <% character.all_enemies.each do |enemy| %>
+      <h3><%= enemy %></h3>
+    <% end %>
+    <h2>Affiliation: <%= character.affiliation %></h2>
+  </section>
+<% end %>
